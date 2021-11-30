@@ -1,0 +1,113 @@
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<nav class="blue darken-2">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">EDIT INFO --> {{user}}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/lgt">LOG OUT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<style>
+body {
+  margin: 0 auto;
+  max-width: 1800px;
+  padding: 0 0px;
+  background-color: #e3f2fd;
+}
+
+
+
+
+
+
+.container {
+  border: 5px solid #90caf9;
+  background-color: #bbdefb;
+  border-radius: 5px;
+  padding: 30px;
+  margin: auto;
+  margin-top:100px;
+  width:600px;
+}
+
+
+.container1 {
+  border: 5px solid #90caf9;
+  background-color: #e3f2fd;
+  border-radius: 5px;
+  padding: 50px;
+  margin: auto;
+  margin-top:50px;
+  width:1500px;
+}
+
+
+
+</style>
+
+<div class="container" align="center">
+    <style>
+    input[type=text], select {
+    width: 1000px;
+    padding: 12px 20px;
+    margin: auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    }
+
+
+
+    input[type=submit] {
+    width:100%;
+    background-color: #42a5f5;
+    color: white;
+    padding: 2px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #1565c0;
+    }
+
+
+
+
+    </style>
+
+
+
+<form action="{% url 'edit' %}" method="post" >
+    {% csrf_token %}
+    {{form}}
+    <label for="email" >New email:</label><br>
+    <input type="text" id="email" name="email" size="10"><br>
+
+
+
+    <label for="address">New Address:</label><br>
+    <input type="text" id="address" name="address"><br><br><br>
+
+
+    <input type="submit" name="Create User" class="waves-effect waves-light btn " value="SAVE">
+
+
+</form>
+</div>

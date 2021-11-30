@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <title>USER DETAILS</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<style>
+body {
+  margin: 0 auto;
+  max-width: 1800px;
+  padding: 0 0px;
+  background-color: #e3f2fd;
+}
+
+
+
+
+
+
+.container {
+  border: 5px solid #90caf9;
+  background-color: #bbdefb;
+  border-radius: 5px;
+  padding: 30px;
+  margin: auto;
+  margin-top:100px;
+  width:600px;
+}
+</style>
+
+<nav class="blue darken-2">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">WELCOME {{user}}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/lgt">LOG OUT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container" align="center">
+    <form action="{% url 'dltusr' %}" method="post" >
+    {% csrf_token %}
+    <h3>Username - {{request.user}}</h3>
+    <h3>Address  - {{address}}</h3>
+    <h3>Email    - {{email}}</h3>
+
+    <p>Want to Edit Details. Then <a href="/edit">Click Here</a></p>
+    <button type="submit" name="Create User" class="waves-effect waves-light btn red" >DELETE USER DETAILS</button>
+    </form>
+</div>
